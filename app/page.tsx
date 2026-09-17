@@ -1,6 +1,7 @@
 import {
-  ArrowRight, ShieldCheck, LockKeyhole, Activity, FileCheck2, Landmark, CheckCircle2
+  ArrowRight, LockKeyhole, Activity, FileCheck2, Landmark, CheckCircle2
 } from "lucide-react";
+import Image from "next/image";
 import ContactForm from "./contact-form";
 import SiteHeader from "./site-header";
 import { services as serviceDetails } from "./services/data";
@@ -94,7 +95,7 @@ export default function Home(){
 
     <section className="contact" id="contact"><div className="contactIntro"><div className="eyebrow">START A CONVERSATION</div><h2>Let’s understand<br/><em>what you need.</em></h2><p>Tell us a little about your organization and the cybersecurity requirement you are working through. We’ll use that context to shape the first conversation.</p><div className="contactMeta"><span><FileCheck2 size={18}/> Confidential discovery</span><span><Activity size={18}/> Virtual-first delivery across Canada</span><span><Landmark size={18}/> Canada & Sub-Saharan Africa</span></div></div><ContactForm services={services}/></section>
 
-    <footer><div className="footerTop"><a className="brand lightBrand" href="#"><span className="brandMark"><ShieldCheck size={20}/></span><span>ATLANTIC<br/><b>FORTIS</b></span></a><div><span>Independent cybersecurity advisory</span><a href="mailto:info@atlanticfortis.com">info@atlanticfortis.com</a></div><a className="button light" href="#contact">Request a Consultation <ArrowRight size={17}/></a></div><div className="footerBottom"><span>© 2026 Atlantic Fortis Inc. All rights reserved.</span><span>Risk · Governance · Resilience · Assurance</span></div></footer>
+    <footer><div className="footerTop"><a className="brand lightBrand" href="#"><Image src="/logo-light.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" /></a><div><span>Independent cybersecurity advisory</span><a href="mailto:info@atlanticfortis.com">info@atlanticfortis.com</a></div><a className="button light" href="#contact">Request a Consultation <ArrowRight size={17}/></a></div><div className="footerBottom"><span>© 2026 Atlantic Fortis Inc. All rights reserved.</span><span>Risk · Governance · Resilience · Assurance</span></div></footer>
     </main>
   </>
 }

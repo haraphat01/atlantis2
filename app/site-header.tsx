@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Menu, ShieldCheck, X } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Menu, X } from "lucide-react";
 
 const links = [
   ["Services", "/services"],
@@ -16,8 +17,7 @@ export default function SiteHeader() {
 
   return <header className="nav">
     <a className="brand" href="#" onClick={() => setIsOpen(false)}>
-      <span className="brandMark"><ShieldCheck size={20} /></span>
-      <span>ATLANTIC<br /><b>FORTIS</b></span>
+      <Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority />
     </a>
     <nav aria-label="Primary navigation">
       {links.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
