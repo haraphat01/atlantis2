@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getService, services } from "../data";
 
@@ -20,7 +21,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   return <main className="servicePage">
     <header className="serviceNav">
-      <a className="brand" href="/"><span className="brandMark"><ShieldCheck size={20} /></span><span>ATLANTIC<br /><b>FORTIS</b></span></a>
+      <a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a>
       <a className="textLink" href="/services">All services <ArrowLeft size={16} /></a>
       <a className="button dark" href="/#contact">Request a Consultation <ArrowRight size={16} /></a>
     </header>

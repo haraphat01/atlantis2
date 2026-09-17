@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Atlantic Fortis | Independent Cybersecurity Advisory",
@@ -15,7 +16,7 @@ const principles = [
 
 export default function AboutPage() {
   return <main className="aboutPage">
-    <header className="serviceNav"><a className="brand" href="/"><span className="brandMark"><ShieldCheck size={20} /></span><span>ATLANTIC<br /><b>FORTIS</b></span></a><a className="button dark" href="/#contact">Request a Consultation <ArrowRight size={16} /></a></header>
+    <header className="serviceNav"><a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a><a className="button dark" href="/#contact">Request a Consultation <ArrowRight size={16} /></a></header>
 
     <section className="aboutHero"><div className="aboutHeroCopy"><div className="eyebrow">ABOUT ATLANTIC FORTIS</div><h1>An independent advisor for a <em>digital world.</em></h1><p>Atlantic Fortis is an independent B2B cybersecurity advisory firm serving clients across Canada and Sub-Saharan Africa. We help organizations understand cyber risk, strengthen governance and build the resilience needed to operate safely in a digital world.</p><a className="button dark" href="/#contact">Start a conversation <ArrowRight size={17} /></a></div><div className="aboutHeroImage"><img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1800&q=85" alt="Abstract digital infrastructure with blue illuminated lines" /></div></section>
 
