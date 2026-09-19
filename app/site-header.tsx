@@ -6,10 +6,10 @@ import { ArrowRight, Menu, X } from "lucide-react";
 
 const links = [
   ["Services", "/services"],
-  ["Industries", "#industries"],
-  ["How We Work", "#approach"],
+  ["Industries", "/industries"],
+  ["How We Work", "/about"],
   ["About", "/about"],
-  ["Insights", "#insights"],
+  ["Insights", "/#contact"],
 ];
 
 export default function SiteHeader() {
