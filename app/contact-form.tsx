@@ -25,7 +25,7 @@ export default function ContactForm({ services }: { services: string[][] }) {
     <label>Area of interest<select defaultValue=""><option value="" disabled>Select a service</option>{services.map((service) => <option key={service[1]}>{service[1]}</option>)}</select></label>
     <label>Tell us about your requirement<textarea rows={5} placeholder="What are you trying to solve or prepare for?" /></label>
     <label>Preferred contact method <span className="optional">(optional)</span><select defaultValue="Email"><option>Email</option><option>Phone</option><option>Video meeting</option></select></label>
-    <button className="button light" type="submit">Request a Consultation <ArrowRight size={17} /></button>
+    <button className="button light" type="submit">Start a Conversation <ArrowRight size={17} /></button>
     <small>By submitting this form, you are requesting an initial business conversation. No confidential incident details should be included.</small>
   </form>;
 }

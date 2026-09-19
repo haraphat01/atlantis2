@@ -21,9 +21,9 @@ const industries = [
 
 export default function IndustriesPage() {
   return <main className="servicesPage">
-    <header className="serviceNav"><a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a><a className="button dark" href="/#contact">Request a Consultation <ArrowRight size={16} /></a></header>
+    <header className="serviceNav"><a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a><a className="button dark" href="/#contact">Start a Conversation <ArrowRight size={16} /></a></header>
     <section className="servicesPageIntro"><div className="eyebrow">INDUSTRIES</div><h1>Security shaped<br /><em>by your context.</em></h1><p>Different industries carry different risks, obligations and operational realities. Atlantic Fortis works with organizations that need security advice shaped by how they operate and what they must protect.</p></section>
     <section className="servicesPageGrid">{industries.map(([title, description], index) => <article className="serviceIndexCard" key={title}><span className="serviceNumber">{String(index + 1).padStart(2, "0")}</span><h2>{title}</h2><p>{description}</p><span className="textLink">Security support for this sector <ArrowRight size={16} /></span></article>)}</section>
-    <section className="serviceCta"><div><div className="eyebrow">NEED ADVICE FOR YOUR SECTOR?</div><h2>Bring us your business context.</h2><p>We can help identify the risks, obligations and security priorities that matter most in your operating environment.</p></div><a className="button light" href="/#contact">Start a conversation <ArrowRight size={17} /></a></section>
+    <section className="serviceCta"><div><div className="eyebrow">NEED ADVICE FOR YOUR SECTOR?</div><h2>Bring us your business context.</h2><p>We can help identify the risks, obligations and security priorities that matter most in your operating environment.</p></div><a className="button light" href="/#contact">Start a Conversation <ArrowRight size={17} /></a></section>
   </main>;
 }

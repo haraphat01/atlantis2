@@ -23,7 +23,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     <header className="serviceNav">
       <a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a>
       <a className="textLink" href="/services">All services <ArrowLeft size={16} /></a>
-      <a className="button dark" href="/#contact">Request a Consultation <ArrowRight size={16} /></a>
+      <a className="button dark" href="/#contact">Start a Conversation <ArrowRight size={16} /></a>
     </header>
 
     <section className="serviceHero">
@@ -47,6 +47,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
     <section className="serviceFrameworks"><div><div className="eyebrow">RELEVANT FRAMEWORKS</div><h2>Standards applied with judgment.</h2></div><div className="serviceFrameworkGrid">{service.frameworks.map((framework) => <span key={framework}>{framework}</span>)}</div></section>
 
-    <section className="serviceCta"><div><div className="eyebrow">START A CONVERSATION</div><h2>Let’s understand what your organization needs.</h2><p>Atlantic Fortis scopes each engagement around your business objective, evidence, timeline and desired outcome.</p></div><a className="button light" href="/#contact">Request a Consultation <ArrowRight size={17} /></a></section>
+    <section className="serviceCta"><div><div className="eyebrow">START A CONVERSATION</div><h2>Let’s understand what your organization needs.</h2><p>Atlantic Fortis scopes each engagement around your business objective, evidence, timeline and desired outcome.</p></div><a className="button light" href="/#contact">Start a Conversation <ArrowRight size={17} /></a></section>
   </main>;
 }

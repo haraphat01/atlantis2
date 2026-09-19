@@ -28,7 +28,7 @@ export default function Home(){
         <h1>Security that makes<br/><em>business stronger.</em></h1>
         <p>Atlantic Fortis helps organizations understand cyber risk, strengthen governance, meet assurance requirements and build resilience with clear, practical advice grounded in evidence.</p>
         <div className="heroAudience"><b>For growing and regulated organizations</b><span>Senior cybersecurity expertise for teams that need specialist capacity without unnecessary complexity.</span></div>
-        <div className="heroActions"><a className="button dark" href="#contact">Request a Consultation <ArrowRight size={17}/></a><a className="textLink" href="#services">Explore our services <ArrowRight size={16}/></a></div>
+        <div className="heroActions"><a className="button dark" href="#contact">Start a Conversation <ArrowRight size={17}/></a><a className="textLink" href="#services">Explore our services <ArrowRight size={16}/></a></div>
         <div className="heroTrust"><div><b>Independent</b><span>No hardware or software sales</span></div><div><b>Evidence-led</b><span>Findings tied to business impact</span></div><div><b>Practical</b><span>Priorities you can act on</span></div></div>
       </div>
       <div className="heroVisual">
@@ -54,11 +54,11 @@ export default function Home(){
       <div className="audienceGrid"><article><span>01</span><h3>Mid-market enterprises and technology scale-ups</h3><p>Organizations with 50 to 1,000 employees preparing for customer assurance, investment, insurance, growth or formal security expectations.</p></article><article><span>02</span><h3>Regulated and critical infrastructure organizations</h3><p>Teams that need independent assurance, stronger resilience, control assessment and structured cybersecurity governance.</p></article><article><span>03</span><h3>High-risk small businesses</h3><p>Law firms, accounting practices, wealth managers and other firms handling sensitive information that need practical foundational protection.</p></article></div>
     </section>
 
-    <section className="statement"><div className="statementInner"><div className="quoteMark">“</div><h2>Enterprise-level cybersecurity expertise,<br/><em>without unnecessary complexity.</em></h2><p>Independent advice. Business-focused thinking. Practical recommendations.</p><a className="button light" href="#contact">Talk to an Advisor <ArrowRight size={17}/></a></div></section>
+    <section className="statement"><div className="statementInner"><div className="quoteMark">“</div><h2>Enterprise-level cybersecurity expertise,<br/><em>without unnecessary complexity.</em></h2><p>Independent advice. Business-focused thinking. Practical recommendations.</p></div></section>
 
     <section className="contact" id="contact"><div className="contactIntro"><div className="eyebrow">START A CONVERSATION</div><h2>Let’s understand<br/><em>what you need.</em></h2><p>Tell us a little about your organization and the cybersecurity requirement you are working through. We’ll use that context to shape the first conversation.</p><div className="contactMeta"><span><FileCheck2 size={18}/> Confidential discovery</span><span><Activity size={18}/> Virtual-first delivery across Canada</span><span><Landmark size={18}/> Canada & Sub-Saharan Africa</span></div></div><ContactForm services={services}/></section>
 
-    <footer><div className="footerTop"><a className="brand lightBrand" href="#"><Image src="/logo-light.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" /></a><div><span>Independent cybersecurity advisory</span><a href="mailto:info@atlanticfortis.com">info@atlanticfortis.com</a></div><a className="button light" href="#contact">Request a Consultation <ArrowRight size={17}/></a></div><div className="footerBottom"><span>© 2026 Atlantic Fortis Inc. All rights reserved.</span><span>Risk · Governance · Resilience · Assurance</span></div></footer>
+    <footer><div className="footerTop"><a className="brand lightBrand" href="#"><Image src="/logo-light.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" /></a><div><span>Independent cybersecurity advisory</span><a href="mailto:info@atlanticfortis.com">info@atlanticfortis.com</a></div><a className="button light" href="#contact">Start a Conversation <ArrowRight size={17}/></a></div><div className="footerBottom"><span>© 2026 Atlantic Fortis Inc. All rights reserved.</span><span>Risk · Governance · Resilience · Assurance</span></div></footer>
     </main>
   </>
 }
