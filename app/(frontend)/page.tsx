@@ -3,7 +3,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import ContactForm from "./contact-form";
-import SiteHeader from "./site-header";
 import { services as serviceDetails } from "./services/data";
 
 const services = [
@@ -19,7 +18,6 @@ const services = [
 export default function Home(){
   return <>
     <a className="skipLink" href="#main-content">Skip to content</a>
-    <SiteHeader />
     <main id="main-content">
 
     <section className="hero">

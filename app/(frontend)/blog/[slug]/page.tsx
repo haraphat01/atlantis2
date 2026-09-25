@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { cache } from "react";
@@ -41,12 +40,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const cover = post.coverImage as Media | null | undefined;
 
   return <main className="servicePage">
-    <header className="serviceNav">
-      <a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a>
-      <a className="textLink" href="/blog">All insights <ArrowLeft size={16} /></a>
-      <a className="button dark" href="/#contact">Start a Conversation <ArrowRight size={16} /></a>
-    </header>
-
     <article className="blogArticle">
       <a className="backLink" href="/blog"><ArrowLeft size={15} /> All insights</a>
       <div className="eyebrow">{post.category?.toUpperCase()}</div>

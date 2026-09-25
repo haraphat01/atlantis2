@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import config from "@payload-config";
 import { getPayload } from "payload";
@@ -24,7 +23,6 @@ export default async function BlogPage() {
   });
 
   return <main className="servicesPage">
-    <header className="serviceNav"><a className="brand" href="/"><Image src="/logo.png" alt="Atlantic Fortis" width={191} height={90} className="brandLogo" priority /></a><a className="button dark" href="/#contact">Start a Conversation <ArrowRight size={16} /></a></header>
     <section className="servicesPageIntro"><div className="eyebrow">INSIGHTS</div><h1>Security thinking<br /><em>in business terms.</em></h1><p>Practical perspectives on cyber risk, governance, compliance and resilience for organizations that need clear direction.</p></section>
     {posts.length === 0
       ? <p className="blogEmpty">No articles published yet. Check back soon.</p>
