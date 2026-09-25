@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+// Atlantic Fortis brand theme for the Payload admin.
+// Payload builds its whole UI (light and dark mode) from these scales, so
+// overriding them re-colours everything without touching component styles.
+@layer payload {
+  :root {
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    /* Neutral scale: paper → slate → ink/deep navy */
+    --color-base-0: rgb(253, 252, 249);
+    --color-base-50: rgb(243, 241, 235);
+    --color-base-100: rgb(233, 229, 219);
+    --color-base-150: rgb(216, 209, 193);
+    --color-base-200: rgb(200, 196, 184);
+    --color-base-250: rgb(185, 183, 175);
+    --color-base-300: rgb(169, 170, 166);
+    --color-base-350: rgb(150, 154, 154);
+    --color-base-400: rgb(131, 138, 142);
+    --color-base-450: rgb(112, 121, 130);
+    --color-base-500: rgb(93, 105, 118);
+    --color-base-550: rgb(81, 94, 110);
+    --color-base-600: rgb(68, 84, 102);
+    --color-base-650: rgb(56, 74, 95);
+    --color-base-700: rgb(44, 63, 87);
+    --color-base-750: rgb(31, 51, 76);
+    --color-base-800: rgb(19, 40, 64);
+    --color-base-850: rgb(14, 32, 54);
+    --color-base-900: rgb(9, 24, 40);
+    --color-base-950: rgb(5, 16, 27);
+    --color-base-1000: rgb(2, 8, 14);
+
+    /* "Success" (published status, confirmations) uses the brand gold */
+    --color-success-50: rgb(250, 245, 236);
+    --color-success-100: rgb(245, 236, 217);
+    --color-success-150: rgb(240, 226, 198);
+    --color-success-200: rgb(235, 216, 178);
+    --color-success-250: rgb(230, 207, 159);
+    --color-success-300: rgb(225, 199, 147);
+    --color-success-350: rgb(220, 192, 136);
+    --color-success-400: rgb(216, 184, 124);
+    --color-success-450: rgb(211, 176, 112);
+    --color-success-500: rgb(197, 163, 99);
+    --color-success-550: rgb(184, 150, 86);
+    --color-success-600: rgb(170, 137, 73);
+    --color-success-650: rgb(156, 124, 60);
+    --color-success-700: rgb(137, 108, 52);
+    --color-success-750: rgb(118, 93, 44);
+    --color-success-800: rgb(98, 78, 37);
+    --color-success-850: rgb(79, 62, 29);
+    --color-success-900: rgb(63, 50, 23);
+    --color-success-950: rgb(47, 37, 18);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', var(--font-body);
+    letter-spacing: -0.02em;
+  }
+
+  // Primary buttons: ink in light mode (Payload default), gold on navy in dark mode,
+  // mirroring the site's `.button.dark` / `.button.light`.
+  html[data-theme='dark'] .btn--style-primary {
+    --bg-color: var(--color-success-450);
+    --color: var(--color-base-900);
+    --hover-bg: var(--color-success-300);
+  }
+
+  // Brand logo swaps between the dark and light artwork with the admin theme.
+  .af-brand--light { display: none; }
+  html[data-theme='dark'] {
+    .af-brand--dark { display: none; }
+    .af-brand--light { display: block; }
+  }
+}

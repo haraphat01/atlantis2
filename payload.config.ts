@@ -20,7 +20,16 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     importMap: { baseDir: path.resolve(dirname) },
-    meta: { titleSuffix: " | Atlantic Fortis CMS" },
+    meta: {
+      titleSuffix: " | Atlantic Fortis CMS",
+      icons: [{ rel: "icon", type: "image/png", url: "/icon.png" }],
+    },
+    components: {
+      graphics: {
+        Logo: "/components/admin/Logo#Logo",
+        Icon: "/components/admin/Icon#Icon",
+      },
+    },
   },
   collections: [Posts, Media, Users],
   editor: lexicalEditor(),
