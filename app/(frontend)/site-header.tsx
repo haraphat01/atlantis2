@@ -9,7 +9,7 @@ const links = [
   ["Industries", "/industries"],
   ["How We Work", "/about"],
   ["About", "/about"],
-  ["Insights", "/#contact"],
+  ["Insights", "/blog"],
 ];
 
 export default function SiteHeader() {
