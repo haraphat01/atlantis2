@@ -7,7 +7,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 const links = [
   ["Services", "/services"],
   ["Industries", "/industries"],
-  ["How We Work", "/about"],
+  ["How We Work", "/how-we-work"],
   ["About", "/about"],
   ["Blogs", "/blog"],
 ];
