@@ -31,6 +31,8 @@ export default buildConfig({
       },
     },
   },
+  // Admin panel lives at /manage rather than the default, easily guessed /admin.
+  routes: { admin: "/manage" },
   collections: [Posts, Media, Users],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

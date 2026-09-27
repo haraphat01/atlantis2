@@ -1,12 +1,12 @@
 # Blog Admin Guide
 
-The blog at `/blog` is powered by [Payload CMS](https://payloadcms.com), which runs inside this Next.js app. Posts are written in the admin panel at `/admin`, stored in a Supabase Postgres database, and cover images are stored in Supabase Storage.
+The blog at `/blog` is powered by [Payload CMS](https://payloadcms.com), which runs inside this Next.js app. Posts are written in the admin panel at `/manage`, stored in a Supabase Postgres database, and cover images are stored in Supabase Storage.
 
 ## How it fits together
 
 | Piece | Where it lives |
 | --- | --- |
-| Admin panel | `/admin`, served by this app |
+| Admin panel | `/manage`, served by this app |
 | Blog pages | `app/(frontend)/blog/` → `/blog` and `/blog/<slug>` |
 | CMS config | `payload.config.ts`, `collections/` (`Posts`, `Media`, `Users`) |
 | Database | Supabase Postgres, in the `payload` schema |
@@ -82,9 +82,9 @@ npm run dev
 
 - Site: http://localhost:3000
 - Blog: http://localhost:3000/blog
-- Admin: http://localhost:3000/admin
+- Admin: http://localhost:3000/manage
 
-The first time you open `/admin`, you'll be asked to create a user. **The first user created becomes the admin.** Add more editors later under **Users**.
+The first time you open `/manage`, you'll be asked to create a user. **The first user created becomes the admin.** Add more editors later under **Users**.
 
 > Local development and production share the same Supabase database, so posts you create locally are live content. Delete test posts when you're done.
 
@@ -92,7 +92,7 @@ The first time you open `/admin`, you'll be asked to create a user. **The first 
 
 ## 3. Writing posts
 
-In `/admin` → **Posts** → **Create New**:
+In `/manage` → **Posts** → **Create New**:
 
 | Field | Notes |
 | --- | --- |
@@ -179,7 +179,7 @@ npm run generate:importmap
 | Images upload but don't display in production | `S3_*` variables are missing in Vercel, or the bucket isn't public. |
 | Migrations hang or fail through the pooler | Use `DIRECT_URL` (port `5432`) for migration commands, as shown above. |
 | Supabase project is unreachable | Free-tier projects pause after about a week of inactivity; resume it in the Supabase dashboard. |
-| `/admin` is a blank dark screen in dev | You opened the dev server via an address other than `localhost` (e.g. `127.0.0.1` or the "Network" IP). Add that host to `allowedDevOrigins` in `next.config.ts` and restart `npm run dev`. |
+| `/manage` is a blank dark screen in dev | You opened the dev server via an address other than `localhost` (e.g. `127.0.0.1` or the "Network" IP). Add that host to `allowedDevOrigins` in `next.config.ts` and restart `npm run dev`. |
 | `localhost` shows "HTTP ERROR 431" | Too many cookies for `localhost` from other projects. Clear them: Chrome → Settings → Privacy → Third-party cookies → See all site data → search `localhost` → delete. |
 | Type errors after editing collections | Run `npm run generate:types`. |
 | Weird build errors after moving files | Delete the `.next` folder and rebuild. |
