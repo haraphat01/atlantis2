@@ -109,12 +109,18 @@ body{font-size:17px}
 .nav .mobileMenu{top:91px}
 .mobileMenu a:not(.button){font-size:17px}
 .servicesPageGrid{gap:18px;background:transparent}
-.serviceIndexCard{background:#fff;border:1px solid #c8d3d1;border-top:4px solid var(--accent);box-shadow:0 10px 26px rgba(15,34,56,.08);padding:40px;transition:background .2s,transform .2s,box-shadow .2s}
-.serviceIndexCard h2{font-size:25px}
-.serviceIndexCard p{font-size:17px;line-height:1.65;color:#4c5c68}
-.serviceIndexCard:hover{background:#eaf0ed;box-shadow:0 16px 34px rgba(15,34,56,.14);transform:translateY(-4px)}
-@media(max-width:900px){.serviceIndexCard{padding:34px}}
-@media(max-width:600px){.serviceIndexCard{padding:30px 25px}.serviceIndexCard h2{font-size:23px}}
+.serviceIndexCard{position:relative;isolation:isolate;display:flex;min-height:390px;overflow:hidden;background:#18353a;color:#fff;border:1px solid #c8d3d1;border-top:4px solid var(--accent);box-shadow:0 10px 26px rgba(15,34,56,.08);transition:transform .2s,box-shadow .2s}
+.serviceIndexCard:after{position:absolute;inset:0;z-index:-1;content:"";background:linear-gradient(180deg,rgba(8,26,35,.05) 12%,rgba(8,26,35,.88) 100%)}
+.serviceIndexCardImage{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.78);transition:transform .5s ease}
+.serviceIndexCardContent{position:absolute;right:0;bottom:0;left:0;padding:28px 30px}
+.serviceIndexCard h2{font-size:25px;color:#fff;margin:12px 0 8px}
+.serviceIndexCard p{font-size:17px;line-height:1.65;color:#e0e8e7;margin:0 0 20px}
+.serviceIndexCard .serviceNumber{display:block;color:#e3c68f;margin:0}
+.serviceIndexCard .textLink{color:#fff}
+.serviceIndexCard:hover{box-shadow:0 16px 34px rgba(15,34,56,.14);transform:translateY(-4px)}
+.serviceIndexCard:hover .serviceIndexCardImage{transform:scale(1.035)}
+@media(max-width:900px){.serviceIndexCard{min-height:360px}}
+@media(max-width:600px){.serviceIndexCard{min-height:340px}.serviceIndexCardContent{padding:24px}.serviceIndexCard h2{font-size:23px}}
 .serviceGrid{gap:18px;background:transparent;border:0}
 .serviceCard{background:#fff;border:1px solid #c8d3d1;border-top:4px solid var(--accent);box-shadow:0 10px 26px rgba(15,34,56,.08);padding:35px 34px 76px;min-height:340px;transition:background .2s,transform .2s,box-shadow .2s}
 .serviceCard .num{font-size:13px;color:#657579}
