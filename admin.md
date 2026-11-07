@@ -57,7 +57,7 @@ S3_SECRET_ACCESS_KEY=<secret access key>
 
 - `.env` is gitignored. Never commit it or share it.
 - `PAYLOAD_SECRET` signs admin logins. Keep it stable; changing it logs everyone out.
-- If the `S3_*` values are empty, uploads are saved to a local `media/` folder. This is fine for quick local tests, but those files are lost on Vercel.
+- If the `S3_*` values are empty, uploads are saved to a local `media/` folder. This is fine for quick local tests, but those files only exist on the machine that saved them, so production should always use Supabase Storage.
 
 ### Install and create the tables
 
@@ -114,19 +114,7 @@ In `/manage` → **Posts** → **Create New**:
 
 ---
 
-## 4. Deploying (Vercel)
-
-In the Vercel project → **Settings → Environment Variables**, add:
-
-- `DATABASE_URL` (the **transaction pooler** string, port `6543`)
-- `PAYLOAD_SECRET`
-- `S3_BUCKET`, `S3_ENDPOINT`, `S3_REGION`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`
-
-Then deploy as usual. The build doesn't need the database, but make sure migrations have been applied (section 5) **before** deploying code that changes the schema.
-
----
-
-## 5. Changing the blog's fields (migrations)
+## 4. Changing the blog's fields (migrations)
 
 Automatic schema syncing is turned off (`push: false` in `payload.config.ts`), because local and production share one database. Any change to a collection in `collections/` needs a migration:
 
@@ -155,7 +143,7 @@ npm run generate:importmap
 
 ---
 
-## 6. Useful commands
+## 5. Useful commands
 
 | Command | What it does |
 | --- | --- |
@@ -169,14 +157,14 @@ npm run generate:importmap
 
 ---
 
-## 7. Troubleshooting
+## 6. Troubleshooting
 
 | Problem | Likely cause / fix |
 | --- | --- |
 | `relation "payload.posts" does not exist` | Migrations haven't been run against this database → section 1, "Install and create the tables". |
 | `schema "payload" does not exist` | Run `create schema if not exists payload;` in the Supabase SQL editor. |
 | Can't log in / logged out everywhere | `PAYLOAD_SECRET` is missing or was changed. |
-| Images upload but don't display in production | `S3_*` variables are missing in Vercel, or the bucket isn't public. |
+| Images upload but don't display in production | `S3_*` variables are missing on the production server, or the bucket isn't public. |
 | Migrations hang or fail through the pooler | Use `DIRECT_URL` (port `5432`) for migration commands, as shown above. |
 | Supabase project is unreachable | Free-tier projects pause after about a week of inactivity; resume it in the Supabase dashboard. |
 | `/manage` is a blank dark screen in dev | You opened the dev server via an address other than `localhost` (e.g. `127.0.0.1` or the "Network" IP). Add that host to `allowedDevOrigins` in `next.config.ts` and restart `npm run dev`. |
