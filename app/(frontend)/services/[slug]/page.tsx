@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getService, services } from "../data";
+import { socialImage } from "../../social-image";
 
 export function generateStaticParams() {
   return services.map(({ slug }) => ({ slug }));
@@ -10,7 +11,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(slug);
-  return service ? { title: `${service.title} | Atlantic Fortis`, description: service.summary } : {};
+  if (!service) return {};
+  const title = `${service.title} | Atlantic Fortis`;
+  return {
+    title,
+    description: service.summary,
+    openGraph: { title, description: service.summary, type: "website", images: [socialImage] },
+    twitter: { card: "summary_large_image", title, description: service.summary, images: [socialImage] },
+  };
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {

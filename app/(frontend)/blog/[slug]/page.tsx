@@ -7,6 +7,7 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import { getPayload } from "payload";
 import type { Media } from "@/payload-types";
 import { formatDate } from "../format";
+import { socialImage } from "../../social-image";
 
 export const dynamic = "force-dynamic";
 
@@ -26,10 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPost(slug);
   if (!post) return {};
   const cover = post.coverImage as Media | null | undefined;
+  const images = cover?.url ? [cover.url] : [socialImage];
   return {
     title: `${post.title} | Atlantic Fortis`,
     description: post.excerpt,
-    openGraph: { title: post.title, description: post.excerpt, type: "article", images: cover?.url ? [cover.url] : undefined },
+    openGraph: { title: post.title, description: post.excerpt, type: "article", images },
+    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images },
   };
 }
 
